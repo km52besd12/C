@@ -1,0 +1,39 @@
+#define RCC_AHB1ENR *((int*)0x40023830)
+#define GPIOB_MODE *((int*)0x40020400)
+#define GPIOB_ODR *((int*)0x40020414)
+		void GPIOB_init(void)
+		{
+			RCC_AHB1ENR |=(0x1<<1);//SET 1 bit to enable portb clock
+			while(!(RCC_AHB1ENR&0x2))//wait until portb clock is set
+			{
+				;
+			}
+		}
+		void red_led_config(void)
+		{
+			GPIOB_MODE |=0x04000000;//clear 27 26 bit fields to configure pb13 a outmode
+		}
+		void delay(void)//software delay
+		{
+		int i;
+		for(i=0;i<150000;i++)
+		{
+			;
+		}
+	}
+		int main()
+		{
+			//intialization phase
+			GPIOB_init();//intialization  
+			red_led_config();//configuration phase
+			while(1)
+			{
+				GPIOB_ODR&=~(0x1<<13);//RED LED IS ON
+				delay();//100msec delay
+				GPIOB_ODR |=(0x1<<13);//RED LED IS OFF
+				delay();//100msec delay
+			}
+			return 0;
+		}
+		 
+			
