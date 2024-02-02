@@ -10,7 +10,7 @@ int main()
     // ptr=(char*)malloc(n,sizeof(int));//calloc
     if(ptr==NULL)
     {
-        printf("Insufficient memoary\n");
+        printf("Insufficient memory\n");
         exit(1);
     }
     for(i=0;i<n;i++)
@@ -18,7 +18,7 @@ int main()
         printf("enter integer-%d:",i+1);
         scanf("%d",ptr+i);
     }
-    printf("after dynamic memoary allocation:");
+    printf("after dynamic memory allocation:");
     for(i=0;i<n;i++)
     {
         printf("%d\t",*(ptr+i));
