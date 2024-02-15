@@ -14,7 +14,7 @@ int main()
     printf("enter what ever content u want to append:");
     gets(str);
    // fputs(str,fp);
-   fprintf(fp,"\n%s",str);
+   fprintf(fp,"\n%s",str);//it is better compared to fputs
     printf("Succesfully Appended\n");
     return 0;
 }
