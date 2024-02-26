@@ -13,6 +13,6 @@ int main()
         free(ptr); //freeing the allocated
         /*open Task manger before run in terminal gcc memoryleak.c  and .\a.exe
         then open Task manager and search for a.exe and enter 1 1 1 1 and observe in  task manager increasing memory
-        while remove comment free(ptr) and contine same process and observe the memoary no change*/
+        while remove comment free(ptr)  and contine same process and observe the memoary no change*/
     }
 }
