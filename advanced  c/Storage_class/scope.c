@@ -9,7 +9,7 @@ int main(){
             printf("Inside Block1:%d\n",a);//20
         }
         {
-            printf("%d\n",a++);//10
+            printf("%d\n",++a);//pre increment is 11 and post increment is 10
         }
          printf("function scope: %d\n",a);//11
         return 0;
